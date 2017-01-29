@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>rails-bootstrap-navbar-issue</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <%= navbar do %>
+      <%= navbar_header brand: 'Home', brand_link: root_path %>
+      <%= navbar_collapse do %>
+        <%= navbar_group do %>
+          <%= navbar_item "Root", root_path %>
+      <% end %>
+      <% end %>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>
