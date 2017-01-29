@@ -112,5 +112,6 @@ __Ruby and gem versions:__
 - Ruby: ruby 2.3.3p222 (2016-11-21 revision 56859) [x86_64-darwin15]
 - Using rails 5.0.1
 - Using bootstrap-sass 3.3.7
+- Using bootstrap-navbar 2.3.0
 - Using rails_bootstrap_navbar 2.0.1
 - Using rspec 3.5.0
