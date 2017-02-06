@@ -1,5 +1,16 @@
 This repository reproduces an error in the rails-bootstrap-navbar gem.
 
+# Solution
+I have found a solution. Simply mock ActionController::TestRequest before relevant view specs.
+```ruby
+before do
+    allow_any_instance_of(ActionController::TestRequest).to receive(:original_url).and_return('')
+end
+```
+bootstrap-navbar uses ```request.original_url``` to determine if a navbar_item should be active or not. It is not available in view specs.
+
+
+
 # Problem
 navbar_item can not receive a link without throwing an error in the test environment. It does not matter if the link is generated with the '[input destination here]_path' helper or if it is hard coded.
 Notice that navbar_header can receive a 'brand_link' without any trouble.
